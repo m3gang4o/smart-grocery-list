@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Grocery List</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-shopping-cart"></i> Smart Grocery List</h1>
+        </header>
+        
+        <div class="input-section">
+            <div class="input-container">
+                <input type="text" id="itemInput" placeholder="Add grocery item..." autocomplete="off">
+                <button id="addBtn" class="add-btn">
+                    <i class="fas fa-plus"></i> Add
+                </button>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="clearAllBtn" class="clear-btn">
+                <i class="fas fa-trash-alt"></i> Clear All
+            </button>
+        </div>
+
+        <div class="shopping-list" id="shoppingList">
+            <div class="empty-state" id="emptyState">
+                <i class="fas fa-list-ul"></i>
+                <p>Your grocery list is empty</p>
+                <small>Start by adding some items above</small>
+            </div>
+            
+            <!-- Category sections will be dynamically generated -->
+            <div class="category-section" id="produce-section" style="display: none;">
+                <h3 class="category-header">
+                    <i class="fas fa-apple-alt"></i> Produce
+                </h3>
+                <ul class="category-items" id="produce-items"></ul>
+            </div>
+
+            <div class="category-section" id="dairy-section" style="display: none;">
+                <h3 class="category-header">
+                    <i class="fas fa-cheese"></i> Dairy
+                </h3>
+                <ul class="category-items" id="dairy-items"></ul>
+            </div>
+
+            <div class="category-section" id="frozen-section" style="display: none;">
+                <h3 class="category-header">
+                    <i class="fas fa-snowflake"></i> Frozen
+                </h3>
+                <ul class="category-items" id="frozen-items"></ul>
+            </div>
+
+            <div class="category-section" id="pantry-section" style="display: none;">
+                <h3 class="category-header">
+                    <i class="fas fa-box"></i> Pantry
+                </h3>
+                <ul class="category-items" id="pantry-items"></ul>
+            </div>
+
+            <div class="category-section" id="bakery-section" style="display: none;">
+                <h3 class="category-header">
+                    <i class="fas fa-bread-slice"></i> Bakery
+                </h3>
+                <ul class="category-items" id="bakery-items"></ul>
+            </div>
+
+            <div class="category-section" id="household-section" style="display: none;">
+                <h3 class="category-header">
+                    <i class="fas fa-home"></i> Household
+                </h3>
+                <ul class="category-items" id="household-items"></ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div class="modal" id="confirmModal">
+        <div class="modal-content">
+            <h3>Clear All Items?</h3>
+            <p>This will permanently delete all items from your grocery list.</p>
+            <div class="modal-buttons">
+                <button id="confirmClear" class="confirm-btn">Yes, Clear All</button>
+                <button id="cancelClear" class="cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
